@@ -8,8 +8,10 @@ macro
 rule
   # Whitespace
   {BLANK}       # no action
+
+  # Comments
   \#.*$
-  
+
   # Literals
   \d+           { [:NUMBER, text.to_i] } # [:NUMBER, 1]
   \"[^"]*\"     { [:STRING, text[1..-2]] } # [:STRING, 'hi']
@@ -49,5 +51,5 @@ inner
     end
     tokens
   end
-  
+
 end
